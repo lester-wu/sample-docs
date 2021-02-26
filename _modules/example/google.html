@@ -1,0 +1,331 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>example.google &#8212; Hail 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-customized.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for example.google</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;Example Google style docstrings.</span>
+
+<span class="sd">This module demonstrates documentation as specified by the `Google Python Style Guide`_.</span>
+<span class="sd">Docstrings may extend over multiple lines. Sections are created</span>
+<span class="sd">with a section header and a colon followed by a block of indented text.</span>
+
+<span class="sd">Example:</span>
+<span class="sd">    Examples can be given using either the `Example` or `Examples`</span>
+<span class="sd">    sections. Sections support any reStructuredText formatting, including</span>
+<span class="sd">    literal blocks::</span>
+
+<span class="sd">        $ python example_google.py</span>
+
+<span class="sd">Section breaks are created by resuming unindented text. Section breaks</span>
+<span class="sd">are also implicitly created anytime a new section starts. There are a bunch</span>
+<span class="sd">of sections providing by `napoleon` extension.</span>
+
+<span class="sd">.. _Google Python Style Guide: http://google.github.io/styleguide/pyguide.html</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">typing</span>
+
+<span class="n">_private_module_level_variable</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">12345</span>
+<span class="sd">&quot;&quot;&quot;This would not show in documentation.&quot;&quot;&quot;</span>
+
+<span class="n">public_module_level_variable</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">98765</span>
+<span class="sd">&quot;&quot;&quot;Module level variable documented inline.</span>
+
+<span class="sd">The docstring may span multiple lines. The type may optionally be specified</span>
+<span class="sd">on the first line, separated by a colon.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="ExampleClass"><a class="viewcode-back" href="../../example.html#example.google.ExampleClass">[docs]</a><span class="k">class</span> <span class="nc">ExampleClass</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;The summary line for a class docstring should fit on one line.</span>
+
+<span class="sd">    If the class has public attributes, they may be documented here</span>
+<span class="sd">    in an `Attributes` section and follow the same formatting as a</span>
+<span class="sd">    function&#39;s `Args` section. Alternatively, attributes may be documented</span>
+<span class="sd">    inline with the attribute&#39;s declaration (see __init__ method below).</span>
+
+<span class="sd">    Properties created with the `@property` decorator should be documented</span>
+<span class="sd">    in the property&#39;s getter method.</span>
+
+
+<span class="sd">    Raise:</span>
+<span class="sd">        ValueError: raise on instantiation if input out of bound</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">CLASS_LEVEL_VARS</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;str&quot;</span>
+    <span class="sd">&quot;&quot;&quot;The class attribute should be documented here.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param1</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param2</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param3</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">readonly_property</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Properties should be documented in their getter method.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s2">&quot;readonly_property&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">readwrite_property</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Properties with both a getter and setter</span>
+<span class="sd">        should only be documented in their getter method.</span>
+
+<span class="sd">        If the setter method contains notable behavior, it should be</span>
+<span class="sd">        mentioned here.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;readwrite_property&quot;</span><span class="p">]</span>
+
+    <span class="nd">@readwrite_property</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">readwrite_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">value</span>
+
+<div class="viewcode-block" id="ExampleClass.example_method"><a class="viewcode-back" href="../../example.html#example.google.ExampleClass.example_method">[docs]</a>    <span class="k">def</span> <span class="nf">example_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param1</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param2</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Class methods are similar to regular functions.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+    <span class="k">def</span> <span class="nf">__special__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;By default special members with docstrings are not included.</span>
+
+<span class="sd">        Special members are any methods or attributes that start with and</span>
+<span class="sd">        end with a double underscore. Any special member with a docstring</span>
+<span class="sd">        will be included in the output, if</span>
+<span class="sd">        `napoleon_include_special_with_doc` is set to True.</span>
+
+<span class="sd">        This behavior can be enabled by changing the following setting in</span>
+<span class="sd">        Sphinx&#39;s conf.py::</span>
+
+<span class="sd">            napoleon_include_special_with_doc = True</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">__special_without_docstring__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">_private</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;By default private members are not included.</span>
+
+<span class="sd">        Private members are any methods or attributes that start with an</span>
+<span class="sd">        underscore and are *not* special. By default they are not included</span>
+<span class="sd">        in the output.</span>
+
+<span class="sd">        This behavior can be changed such that private members *are* included</span>
+<span class="sd">        by changing the following setting in Sphinx&#39;s conf.py::</span>
+
+<span class="sd">            napoleon_include_private_with_doc = True</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">_private_without_docstring</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="ExampleError"><a class="viewcode-back" href="../../example.html#example.google.ExampleError">[docs]</a><span class="k">class</span> <span class="nc">ExampleError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exceptions are documented in the same way as classes.</span>
+
+<span class="sd">    The __init__ method may be documented in either the class level</span>
+<span class="sd">    docstring, or as a docstring on the __init__ method itself.</span>
+
+<span class="sd">    Either form is acceptable, but the two should not be mixed. Choose one</span>
+<span class="sd">    convention to document the __init__ method and be consistent with it.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        Do not include the `self` parameter in the `Args` section.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">code</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">code</span> <span class="o">=</span> <span class="n">code</span></div>
+
+
+<div class="viewcode-block" id="example_generator"><a class="viewcode-back" href="../../example.html#example.google.example_generator">[docs]</a><span class="k">def</span> <span class="nf">example_generator</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Generators have a `Yields` section instead of a `Returns` section.</span>
+
+<span class="sd">    Use the literal block `::` to introduce a code block. The literal block</span>
+<span class="sd">    must be indented.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        A description for the example::</span>
+
+<span class="sd">            print([i for i in example_generator(4)])</span>
+<span class="sd">            [0, 1, 2, 3]</span>
+
+<span class="sd">    If you want to doctest the code block, please lead with `&gt;&gt;&gt;`. It will be</span>
+<span class="sd">    doctested when running `python -m doctest` command.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        A description for the example(doctest)::</span>
+
+<span class="sd">            &gt;&gt;&gt; print([i for i in example_generator(4)])</span>
+<span class="sd">            [0, 1, 2, 3]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">i</span></div>
+
+
+<div class="viewcode-block" id="module_level_function"><a class="viewcode-back" href="../../example.html#example.google.module_level_function">[docs]</a><span class="k">def</span> <span class="nf">module_level_function</span><span class="p">(</span>
+    <span class="n">param1</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param2</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">object</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;This is an example of a module level function.</span>
+
+<span class="sd">    Function parameters should be documented in the `Args` section. The name</span>
+<span class="sd">    of each parameter is required. The type and description of each parameter</span>
+<span class="sd">    is optional, but should be included if not obvious.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        AttributeError: The `Raises` section is a list of all exceptions</span>
+<span class="sd">            that are relevant to the interface.</span>
+<span class="sd">        ValueError: If `param2` is equal to `param1`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">param1</span> <span class="o">==</span> <span class="n">param2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;param1 may not be equal to param2&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="example_of_keywords"><a class="viewcode-back" href="../../example.html#example.google.example_of_keywords">[docs]</a><span class="k">def</span> <span class="nf">example_of_keywords</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Napoleon keyword.</span>
+
+<span class="sd">    There are a bunch of keywords providing by `napoleon` extension which</span>
+<span class="sd">    can help render section headers.</span>
+
+<span class="sd">    Danger:</span>
+<span class="sd">        Add description here.</span>
+<span class="sd">    Warning:</span>
+<span class="sd">        Add description here.</span>
+<span class="sd">    Note:</span>
+<span class="sd">        Add description here.</span>
+<span class="sd">    Important:</span>
+<span class="sd">        Add description here.</span>
+<span class="sd">    Tip:</span>
+<span class="sd">        Add description here.</span>
+<span class="sd">    See Also:</span>
+<span class="sd">        Add description here.</span>
+<span class="sd">    Example:</span>
+<span class="sd">        Add description here.</span>
+<span class="sd">    Raise:</span>
+<span class="sd">        Add description here.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="example_of_rst"><a class="viewcode-back" href="../../example.html#example.google.example_of_rst">[docs]</a><span class="k">def</span> <span class="nf">example_of_rst</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Common RestructureText syntax.</span>
+
+<span class="sd">    *italic*</span>
+<span class="sd">    **bold**</span>
+<span class="sd">    `python &lt;www.python.org&gt;`_</span>
+<span class="sd">    `RST Syntax Page`_</span>
+
+<span class="sd">    .. _RST Syntax Page: https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html</span>
+
+<span class="sd">    * This is a bulleted list.</span>
+<span class="sd">    * It has two items, the second</span>
+<span class="sd">      item uses two lines. (note the indentation)</span>
+
+<span class="sd">    1. This is a numbered list.</span>
+<span class="sd">    2. It has two items too.</span>
+
+<span class="sd">    #. This is a numbered list.</span>
+<span class="sd">    #. It has two items too.</span>
+
+<span class="sd">    +------------+------------+-----------+</span>
+<span class="sd">    | Header 1   | Header 2   | Header 3  |</span>
+<span class="sd">    +============+============+===========+</span>
+<span class="sd">    | body row 1 | column 2   | column 3  |</span>
+<span class="sd">    +------------+------------+-----------+</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Hail</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../example.html">example package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, yrcloud.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
